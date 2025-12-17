@@ -1,0 +1,1 @@
+export { useNotesStore } from './notesStore';

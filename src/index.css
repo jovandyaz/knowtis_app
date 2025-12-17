@@ -1,0 +1,153 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans:
+    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --radius: 0.75rem;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.329 0.011 91.7);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.329 0.011 91.7);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.329 0.011 91.7);
+
+  --muted: oklch(0.973 0.004 91.4);
+  --muted-foreground: oklch(0.569 0.005 91.5);
+  --primary: oklch(0.45 0.18 290);
+  --primary-foreground: oklch(0.99 0.01 290);
+
+  --secondary: oklch(0.973 0.004 91.4);
+  --secondary-foreground: oklch(0.329 0.011 91.7);
+
+  --accent: oklch(0.955 0.004 91.4);
+  --accent-foreground: oklch(0.329 0.011 91.7);
+
+  --destructive: oklch(0.6 0.18 25);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  --border: oklch(0.933 0.003 106.5);
+  --input: oklch(0.933 0.003 106.5);
+  --ring: oklch(0.45 0.18 290);
+
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: oklch(0.213 0 0);
+  --foreground: oklch(0.87 0 0);
+
+  --card: oklch(0.264 0 0);
+  --card-foreground: oklch(0.87 0 0);
+  --popover: oklch(0.264 0 0);
+  --popover-foreground: oklch(0.87 0 0);
+
+  --muted: oklch(0.277 0 0);
+  --muted-foreground: oklch(0.689 0 0);
+
+  --primary: oklch(0.65 0.18 290);
+  --primary-foreground: oklch(0.213 0 0);
+
+  --secondary: oklch(0.277 0 0);
+  --secondary-foreground: oklch(0.87 0 0);
+
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.87 0 0);
+
+  --destructive: oklch(0.6 0.18 25);
+  --destructive-foreground: oklch(0.99 0 0);
+
+  --border: oklch(0.305 0 0);
+  --input: oklch(0.305 0 0);
+  --ring: oklch(0.65 0.18 290);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/80 dark:bg-black/30 backdrop-blur-md border border-white/40 dark:border-white/5 shadow-sm;
+  }
+
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-sm border border-border/40 shadow-sm hover:shadow-md transition-all duration-300;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/20 rounded-full hover:bg-muted-foreground/40 transition-colors;
+}
