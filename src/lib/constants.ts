@@ -1,6 +1,6 @@
 export const STORAGE_KEYS = {
-  NOTES: 'notis:notes',
-  THEME: 'notis:theme',
+  NOTES: 'knowtis:notes',
+  THEME: 'knowtis:theme',
 } as const;
 
 export const DEBOUNCE_DELAYS = {

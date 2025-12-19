@@ -1,6 +1,6 @@
 # Architecture & Technical Concepts
 
-This document explains the key architectural decisions and technical concepts implemented in Notis.
+This document explains the key architectural decisions and technical concepts implemented in this project.
 
 ## Table of Contents
 
@@ -19,7 +19,7 @@ This document explains the key architectural decisions and technical concepts im
 
 ## Overview
 
-Notis is designed to demonstrate modern React best practices with:
+This project is designed to demonstrate modern React best practices with:
 
 - **Type Safety**: Strict TypeScript with runtime validation using Zod
 - **State Management**: Efficient handling with Zustand and persistent storage
@@ -126,7 +126,7 @@ export const useNotesStore = create<NotesStore>()(
       // ... state and actions
     }),
     {
-      name: STORAGE_KEYS.NOTES, // 'notis:notes'
+      name: STORAGE_KEYS.NOTES,
       partialize: (state) => ({ notes: state.notes }),
     }
   )
@@ -414,7 +414,7 @@ function normalizeForSearch(text: string): string {
 
 ## Accessibility
 
-Notis follows WCAG 2.1 Level AA guidelines:
+This project follows WCAG 2.1 Level AA guidelines:
 
 ### 1. Keyboard Navigation
 

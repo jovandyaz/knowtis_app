@@ -1,4 +1,4 @@
-# Notis App
+# knowtis app
 
 A real-time collaborative notes application built with React 19, TypeScript, and modern tooling. This app handles concurrent edits efficiently using CRDT (Conflict-free Replicated Data Types) and WebRTC for peer-to-peer synchronization.
 

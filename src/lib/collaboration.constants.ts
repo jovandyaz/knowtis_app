@@ -1,6 +1,6 @@
 export const COLLAB_CONFIG = {
-  CHANNEL_NAME: 'collaborative-notes-sync',
-  ROOM_PREFIX: 'notis-collab',
+  CHANNEL_NAME: 'collaborative-knowtis-sync',
+  ROOM_PREFIX: 'knowtis-collab',
   PRESENCE_INTERVAL_MS: 5000,
   STALE_USER_TIMEOUT_MS: 12000,
   PROVIDER_INIT_DELAY_MS: 100,
